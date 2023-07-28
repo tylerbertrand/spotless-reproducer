@@ -1,0 +1,11 @@
+gradleEnterprise {
+    server = "https://ge.solutions-team.gradle.com"
+    buildScan {
+        publishAlways()
+        publishIfAuthenticated()
+        uploadInBackground = System.getenv("CI") == null
+        capture {
+            taskInputFiles = true
+        }
+    }
+}
